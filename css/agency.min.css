@@ -38,7 +38,7 @@
     transform:translateX(25%);
   }
 }
-@media screen and (min-width:768){
+@media(min-width:768px){
   .sp_br{
     display: none!important;
   }
