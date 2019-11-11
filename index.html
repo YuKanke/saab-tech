@@ -139,13 +139,13 @@
                         SaaB Technologiesの<b>"SaaB"</b>は
                         <br><b>「Serve as a bridge」(懸け橋になる)</b>の略語です。
                         <br>
-                        <br>昨今、様々なIT製品やITサービスが普及し、<br class="sp_br">非常に便利な世の中になりました。
-                        <br>その影響はビジネスにも大きく波及しており、<br class="sp_br">IT技術を活用すればその多大な恩恵を享受することが出来ます。
-                        <br>しかし、現状は誰しもがそのIT技術を活用する事が出来ているわけではなく、
-                        <br>IT技術に苦手意識があったり、IT技術に関する情報が届きにくい環境にいる方などは
-                        <br>その恩恵を受けられず、IT技術を活用してる方との差がどんどん広がる一方となっています。
-                        <br>そこで私は上記のような方々に対し、分かりやすく、且つ最適な形でIT技術を提供することで
-                        <br><b>「私がITの活用へ繋がる懸け橋になることで、事業の発展に寄与出来ないか」</b>と考え、上記の屋号を制定致しました。
+                        <br>昨今、様々なIT製品やITサービスが普及し、非常に便利な世の中になりました。
+                        その影響はビジネスにも大きく波及しており、IT技術を活用すればその多大な恩恵を享受することが出来ます。
+                        しかし、現状は誰しもがそのIT技術を活用する事が出来ているわけではなく、
+                        IT技術に苦手意識があったり、IT技術に関する情報が届きにくい環境にいる方などは
+                        その恩恵を受けられず、IT技術を活用してる方との差がどんどん広がる一方となっています。
+                        そこで私は上記のような方々に対し、分かりやすく、且つ最適な形でIT技術を提供することで
+                        <b>「私がITの活用へ繋がる懸け橋になることで、事業の発展に貢献する」</b>と考え、上記の屋号を制定致しました。
                     </p>
                 </div>
             </div>
@@ -481,6 +481,7 @@
                             <br>多彩な業務経験により、ITに関する事であれば多彩な対応が可能です。
                             <br>趣味はレーシングカートやドライブ、スノーボードなど。
                         </p>
+                        <!--
                         <ul class="list-inline social-buttons">
                             <li class="list-inline-item">
                                 <a href="#">
@@ -498,6 +499,7 @@
                                 </a>
                             </li>
                         </ul>
+                        -->
                     </div>
                 </div>
                 <div class="col-sm-6">
@@ -509,11 +511,6 @@
                     <div class="row">
                         <div class="col-12">
                             <canvas id="SkillChart2"></canvas>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <canvas id="SkillChart3"></canvas>
                         </div>
                     </div>
                 </div>
@@ -1157,7 +1154,7 @@
                 labels: ["PHP", "HTML/CSS", "JavaScript", "VBA", "VB.NET", "Python", "SQL"],
                 datasets: [{
                     label: 'Programing language',
-                    data: [7, 4, 5, 10, 6, 3, 8],
+                    data: [8, 7, 6, 10, 7, 4, 9],
                     backgroundColor: 'rgba(255, 99, 132, 0.2)',
                     borderWidth: 1
                 }]
@@ -1177,35 +1174,11 @@
         var myChart = new Chart(ctx, {
             type: 'horizontalBar',
             data: {
-                labels: ["Laravel", "jQuery", "Git", "Jenkins", "Docker", "WordPress", "Alfresco", "EC-CUBE"],
+                labels: ["Laravel", "jQuery", "Git", "Jenkins", "Docker", "WordPress", "Alfresco", "EC-CUBE","WinActor"],
                 datasets: [{
                     label: 'Others',
-                    data: [7, 5, 6, 7, 7, 6, 7, 7],
+                    data: [8, 6, 8, 8, 9, 7, 8, 7, 9],
                     backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    xAxes: [{
-                        ticks: {
-                            beginAtZero: true,
-                            max: 10
-                        }
-                    }]
-                }
-            }
-        });
-
-        var ctx = document.getElementById("SkillChart3");
-        var myChart = new Chart(ctx, {
-            type: 'horizontalBar',
-            data: {
-                labels: ["Laravel", "jQuery", "Git", "Jenkins", "Docker", "WordPress", "Alfresco", "EC-CUBE"],
-                datasets: [{
-                    label: 'Others',
-                    data: [7, 5, 6, 7, 7, 6, 7, 7],
-                    backgroundColor: 'rgba(255, 206, 86, 0.2)',
                     borderWidth: 1
                 }]
             },
