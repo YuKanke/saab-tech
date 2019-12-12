@@ -72,10 +72,10 @@
         !function (t) { "use strict"; t.loadCSS || (t.loadCSS = function () { }); var e = loadCSS.relpreload = {}; if (e.support = function () { var e; try { e = t.document.createElement("link").relList.supports("preload") } catch (a) { e = !1 } return function () { return e } }(), e.bindMediaToggle = function (t) { function e() { t.addEventListener ? t.removeEventListener("load", e) : t.attachEvent && t.detachEvent("onload", e), t.setAttribute("onload", null), t.media = a } var a = t.media || "all"; t.addEventListener ? t.addEventListener("load", e) : t.attachEvent && t.attachEvent("onload", e), setTimeout(function () { t.rel = "stylesheet", t.media = "only x" }), setTimeout(e, 3e3) }, e.poly = function () { if (!e.support()) for (var a = t.document.getElementsByTagName("link"), n = 0; n < a.length; n++) { var o = a[n]; "preload" !== o.rel || "style" !== o.getAttribute("as") || o.getAttribute("data-loadcss") || (o.setAttribute("data-loadcss", !0), e.bindMediaToggle(o)) } }, !e.support()) { e.poly(); var a = t.setInterval(e.poly, 500); t.addEventListener ? t.addEventListener("load", function () { e.poly(), t.clearInterval(a) }) : t.attachEvent && t.attachEvent("onload", function () { e.poly(), t.clearInterval(a) }) } "undefined" != typeof exports ? exports.loadCSS = loadCSS : t.loadCSS = loadCSS }("undefined" != typeof global ? global : this);
     </script>
 
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="preload" as="font" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap' rel="preload" as="font" type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic&display=swap' rel="preload" as="font" type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&display=swap' rel="preload" as="font" type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="preload" as="font">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap' rel="preload" as="font">
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic&display=swap' rel="preload" as="font">
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&display=swap' rel="preload" as="font">
 
     <!-- Custom styles for this template -->
     
@@ -780,9 +780,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <textarea class="form-control" name="entry.2089486694" id="message" placeholder="お問い合わせ内容" required="required"
-                                        data-validation-required-message="Please enter a message.">
-                                    </textarea>
+                                    <textarea class="form-control" name="entry.2089486694" id="message" placeholder="お問い合わせ内容" required="required" data-validation-required-message="Please enter a message."></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
