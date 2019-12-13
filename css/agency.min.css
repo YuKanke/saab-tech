@@ -14,10 +14,10 @@
   animation:slide 3s ease-in-out infinite alternate;
   background-image: linear-gradient(-60deg, rgb(168, 231, 143) 50%, #6CC7D5 50%);
   bottom:0;
-  left:auto;
+  left:-50%;
   opacity:.5;
   position:fixed;
-  right:auto;
+  right:-50%;
   top:0;
   z-index:-1;
 }
