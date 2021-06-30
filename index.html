@@ -775,8 +775,8 @@
                             <div class="clearfix"></div>
                             <div class="col-lg-12 text-center">
                                 <div id="success"></div>
-                                <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase"
-                                    type="submit">Send Message
+                                <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit" onSubmit="formClick()">
+                                    Send Message
                                 </button>
                             </div>
                         </div>
@@ -1354,8 +1354,8 @@
     
     <!-- 2021/6/30 フォーム送信後に送信ボタンを非活性とする。 -->
     <script>
-        const sendButton = document.getElementById('sendButton');
-        target.addEventListener('click', () => {
+        function formClick(){
+            const sendButton = document.getElementById('sendButton');
             var name = document.getElementById('name').value;
             var email = document.getElementById('email').value;
             var message = document.getElementById('message').value;
@@ -1366,7 +1366,8 @@
             }else{
                 alert("お名前、メールアドレス、お問い合わせ内容のいずれかが不正です。");
             }
-        }, false);
+        return true;
+        }
     </script>
     
 </body>
