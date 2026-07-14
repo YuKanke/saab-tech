@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SaaB Technologies｜コミット済み版との差分</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: #303b3e;
+      background: #f3f7f6;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
+      line-height: 1.7;
+    }
+    header { padding: 48px 24px 36px; text-align: center; background: #fff; }
+    h1 { margin: 0 0 10px; font-size: clamp(24px, 4vw, 38px); }
+    header p { margin: 0; color: #607174; }
+    main { width: min(1240px, calc(100% - 32px)); margin: 40px auto 72px; }
+    section { margin-top: 48px; }
+    h2 { margin-bottom: 8px; font-size: 24px; }
+    .lead { margin: 0 0 20px; color: #607174; }
+    .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    figure { margin: 0; overflow: hidden; background: #fff; border: 1px solid #d8e4e2; border-radius: 12px; }
+    figcaption { padding: 14px 18px; color: #fff; background: #176f7e; font-weight: 700; }
+    figure:first-child figcaption { background: #667477; }
+    img { display: block; width: 100%; height: auto; }
+    .notes { margin-top: 48px; padding: 26px 30px; background: #fff; border: 1px solid #d8e4e2; border-radius: 12px; }
+    .notes h2 { margin-top: 0; }
+    .notes li + li { margin-top: 8px; }
+    code { padding: 2px 6px; background: #e5efed; border-radius: 4px; }
+    @media (max-width: 760px) {
+      header { padding-top: 32px; }
+      main { margin-top: 24px; }
+      .comparison { grid-template-columns: 1fr; }
+      .notes { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>コミット済み版との見た目の差分</h1>
+    <p>左がBefore、右が現在の未コミット版です。すべて同一条件で撮影しています。</p>
+  </header>
+  <main>
+    <section>
+      <h2>タブレット幅：900px</h2>
+      <p class="lead">今回の主な見た目の改善です。Beforeではナビが収まらず2行になります。</p>
+      <div class="comparison">
+        <figure>
+          <figcaption>BEFORE｜コミット済み版</figcaption>
+          <img src="before-tablet.png" alt="コミット済み版の900px表示。ナビが2行に折れている">
+        </figure>
+        <figure>
+          <figcaption>AFTER｜現在版</figcaption>
+          <img src="after-tablet.png" alt="現在版の900px表示。ナビがメニューボタンに切り替わっている">
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <h2>デスクトップ幅：1440px</h2>
+      <p class="lead">Fable5版のデザインを維持する方針なので、通常表示はほぼ同じです。</p>
+      <div class="comparison">
+        <figure>
+          <figcaption>BEFORE｜コミット済み版</figcaption>
+          <img src="before-desktop.png" alt="コミット済み版の1440px表示">
+        </figure>
+        <figure>
+          <figcaption>AFTER｜現在版</figcaption>
+          <img src="after-desktop.png" alt="現在版の1440px表示">
+        </figure>
+      </div>
+    </section>
+
+    <aside class="notes">
+      <h2>静止画に現れない差分</h2>
+      <ul>
+        <li>サービス・お困りごとカードに、マウスを乗せたときだけ薄い浮き上がりを追加</li>
+        <li>実績カードをキーボードで選択したときも、ホバーと同じ強調を表示</li>
+        <li>狭いスマホでロゴとメニューボタンが競合しないよう最大幅を調整</li>
+        <li>Safari用の背景ぼかし対応と、動きを減らす設定を補完</li>
+      </ul>
+      <p>サイト本体の変更は <code>css/style.css</code> だけです。</p>
+    </aside>
+  </main>
+</body>
+</html>

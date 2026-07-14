@@ -2,1539 +2,681 @@
 <html lang="ja">
 
 <head>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142584238-1"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-142584238-1');
-    </script>
-
-    <!-- 12/13 PWA用-->
-    <link rel="apple-touch-icon" href="img/PWA_icons/icon-192x192.png">
-    <meta name="theme-color" content="#6CC7D5">
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker
-                .register('/service-worker.js'); // ここはservice-worker.jsのパスを指定
-        }
-    </script>
-
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="SaaB Technologiesは「お客様とITを繋ぐ懸け橋になる事でお客様の事業発展に貢献する。」をモットーにシステム開発、ホームページ作成、SEO対策、IT製品導入支援、IT製品保守管理等の各種ITサービスの提供をしています。">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>SaaB Technologies｜あなたとITを繋ぐ懸け橋に - 東京・埼玉・千葉のITサービス</title>
+    <meta name="description" content="SaaB Technologiesは東京・埼玉・千葉を中心に、システム開発・ホームページ制作・AI導入支援・IT製品の導入支援・保守管理まで、ITのお困りごとをまるごと引き受ける個人事業です。相談・お見積りは無料です。">
     <meta name="author" content="SaaB Technologies">
+    <link rel="canonical" href="https://saab-tech.com/">
 
-    <title>SaaB Technologies|東京･埼玉･千葉をメインに総合的なITサービスの提供をしている事業者です。</title>
+    <!-- OGP -->
+    <meta property="og:title" content="SaaB Technologies｜あなたとITを繋ぐ懸け橋に">
+    <meta property="og:description" content="システム開発からパソコンのお困りごとまで。東京・埼玉・千葉のITなんでも相談窓口。相談・お見積りは無料です。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://saab-tech.com/">
+    <meta property="og:image" content="https://saab-tech.com/img/about_logo.png">
+    <meta property="og:site_name" content="SaaB Technologies">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary">
+
     <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="img/PWA_icons/icon-192x192.png">
+    <meta name="theme-color" content="#17707f">
 
-    <!-- 12/13 PWA用-->
-    <link rel="manifest" href="/manifest.json">
-    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <link rel="preload" href="vendor/bootstrap/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css"></noscript>
-    <script>
-        !function (t) { "use strict"; t.loadCSS || (t.loadCSS = function () { }); var e = loadCSS.relpreload = {}; if (e.support = function () { var e; try { e = t.document.createElement("link").relList.supports("preload") } catch (a) { e = !1 } return function () { return e } }(), e.bindMediaToggle = function (t) { function e() { t.addEventListener ? t.removeEventListener("load", e) : t.attachEvent && t.detachEvent("onload", e), t.setAttribute("onload", null), t.media = a } var a = t.media || "all"; t.addEventListener ? t.addEventListener("load", e) : t.attachEvent && t.attachEvent("onload", e), setTimeout(function () { t.rel = "stylesheet", t.media = "only x" }), setTimeout(e, 3e3) }, e.poly = function () { if (!e.support()) for (var a = t.document.getElementsByTagName("link"), n = 0; n < a.length; n++) { var o = a[n]; "preload" !== o.rel || "style" !== o.getAttribute("as") || o.getAttribute("data-loadcss") || (o.setAttribute("data-loadcss", !0), e.bindMediaToggle(o)) } }, !e.support()) { e.poly(); var a = t.setInterval(e.poly, 500); t.addEventListener ? t.addEventListener("load", function () { e.poly(), t.clearInterval(a) }) : t.attachEvent && t.attachEvent("onload", function () { e.poly(), t.clearInterval(a) }) } "undefined" != typeof exports ? exports.loadCSS = loadCSS : t.loadCSS = loadCSS }("undefined" != typeof global ? global : this);
-    </script>
+    <link rel="stylesheet" href="css/style.css">
 
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css"></noscript>
-    <script>
-        !function (t) { "use strict"; t.loadCSS || (t.loadCSS = function () { }); var e = loadCSS.relpreload = {}; if (e.support = function () { var e; try { e = t.document.createElement("link").relList.supports("preload") } catch (a) { e = !1 } return function () { return e } }(), e.bindMediaToggle = function (t) { function e() { t.addEventListener ? t.removeEventListener("load", e) : t.attachEvent && t.detachEvent("onload", e), t.setAttribute("onload", null), t.media = a } var a = t.media || "all"; t.addEventListener ? t.addEventListener("load", e) : t.attachEvent && t.attachEvent("onload", e), setTimeout(function () { t.rel = "stylesheet", t.media = "only x" }), setTimeout(e, 3e3) }, e.poly = function () { if (!e.support()) for (var a = t.document.getElementsByTagName("link"), n = 0; n < a.length; n++) { var o = a[n]; "preload" !== o.rel || "style" !== o.getAttribute("as") || o.getAttribute("data-loadcss") || (o.setAttribute("data-loadcss", !0), e.bindMediaToggle(o)) } }, !e.support()) { e.poly(); var a = t.setInterval(e.poly, 500); t.addEventListener ? t.addEventListener("load", function () { e.poly(), t.clearInterval(a) }) : t.attachEvent && t.attachEvent("onload", function () { e.poly(), t.clearInterval(a) }) } "undefined" != typeof exports ? exports.loadCSS = loadCSS : t.loadCSS = loadCSS }("undefined" != typeof global ? global : this);
-    </script>
-
-
-    <!-- Bootstrap core CSS -->
+    <!-- GA4: 測定IDを取得したら以下のコメントを外して G-XXXXXXXXXX を置き換える -->
     <!--
-        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
     -->
 
-    <!-- Chart.JS -->
-    <!--
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" rel="stylesheet">
-    -->
-
-
-
-
-    <!-- Custom fonts for this template -->
-    
-    <!--
-        <link href="vendor/fontawesome-free/css/all.min.css" rel='stylesheet' type="text/css">
-    -->
-    
-    <link rel="preload" href="vendor/fontawesome-free/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css"></noscript>
-    <script>
-        !function (t) { "use strict"; t.loadCSS || (t.loadCSS = function () { }); var e = loadCSS.relpreload = {}; if (e.support = function () { var e; try { e = t.document.createElement("link").relList.supports("preload") } catch (a) { e = !1 } return function () { return e } }(), e.bindMediaToggle = function (t) { function e() { t.addEventListener ? t.removeEventListener("load", e) : t.attachEvent && t.detachEvent("onload", e), t.setAttribute("onload", null), t.media = a } var a = t.media || "all"; t.addEventListener ? t.addEventListener("load", e) : t.attachEvent && t.attachEvent("onload", e), setTimeout(function () { t.rel = "stylesheet", t.media = "only x" }), setTimeout(e, 3e3) }, e.poly = function () { if (!e.support()) for (var a = t.document.getElementsByTagName("link"), n = 0; n < a.length; n++) { var o = a[n]; "preload" !== o.rel || "style" !== o.getAttribute("as") || o.getAttribute("data-loadcss") || (o.setAttribute("data-loadcss", !0), e.bindMediaToggle(o)) } }, !e.support()) { e.poly(); var a = t.setInterval(e.poly, 500); t.addEventListener ? t.addEventListener("load", function () { e.poly(), t.clearInterval(a) }) : t.attachEvent && t.attachEvent("onload", function () { e.poly(), t.clearInterval(a) }) } "undefined" != typeof exports ? exports.loadCSS = loadCSS : t.loadCSS = loadCSS }("undefined" != typeof global ? global : this);
-    </script>
-
-
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic&display=swap'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&display=swap'>
-
-    <!--12/12追加 フォント読み込み中の文字表示-->
-    <style>
-        @font-face {
-            font-family: 'Font Awesome 5 Free';
-            font-style: normal;
-            font-weight: 900;
-            src: url("vendor/fontawesome-free/webfonts/fa-solid-900.woff2") format("woff2");
-            font-display: swap;
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "SaaB Technologies",
+        "slogan": "Serve as a bridge — あなたとITを繋ぐ懸け橋になる",
+        "url": "https://saab-tech.com/",
+        "logo": "https://saab-tech.com/img/about_logo.png",
+        "description": "システム開発・ホームページ制作・AI導入支援・IT製品の導入支援・保守管理など、総合的なITサービスを提供する個人事業。",
+        "areaServed": ["東京都", "埼玉県", "千葉県"],
+        "founder": {
+            "@type": "Person",
+            "name": "菅家 裕",
+            "jobTitle": "代表・フルスタックエンジニア"
         }
-    </style>
-
-    <!-- Custom styles for this template -->
-    
-    
-    <!--
-    <link href="css/agency.min.css" rel="stylesheet">
-    -->
-
-    <link rel="preload" href="css/agency.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/agency.min.css"></noscript>
-    <script>
-        !function (t) { "use strict"; t.loadCSS || (t.loadCSS = function () { }); var e = loadCSS.relpreload = {}; if (e.support = function () { var e; try { e = t.document.createElement("link").relList.supports("preload") } catch (a) { e = !1 } return function () { return e } }(), e.bindMediaToggle = function (t) { function e() { t.addEventListener ? t.removeEventListener("load", e) : t.attachEvent && t.detachEvent("onload", e), t.setAttribute("onload", null), t.media = a } var a = t.media || "all"; t.addEventListener ? t.addEventListener("load", e) : t.attachEvent && t.attachEvent("onload", e), setTimeout(function () { t.rel = "stylesheet", t.media = "only x" }), setTimeout(e, 3e3) }, e.poly = function () { if (!e.support()) for (var a = t.document.getElementsByTagName("link"), n = 0; n < a.length; n++) { var o = a[n]; "preload" !== o.rel || "style" !== o.getAttribute("as") || o.getAttribute("data-loadcss") || (o.setAttribute("data-loadcss", !0), e.bindMediaToggle(o)) } }, !e.support()) { e.poly(); var a = t.setInterval(e.poly, 500); t.addEventListener ? t.addEventListener("load", function () { e.poly(), t.clearInterval(a) }) : t.attachEvent && t.attachEvent("onload", function () { e.poly(), t.clearInterval(a) }) } "undefined" != typeof exports ? exports.loadCSS = loadCSS : t.loadCSS = loadCSS }("undefined" != typeof global ? global : this);
+    }
     </script>
-
 </head>
 
-<body id="page-top">
+<body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <header class="site-header">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" aria-label="page-top" href="#page-top"></a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav text-uppercase ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#page-top">Top</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#Cases">Cases</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#Whoami">Who are me</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-                    </li>
+            <a class="brand" href="#top" aria-label="SaaB Technologies トップへ">
+                <img src="img/logo_h.png" alt="SaaB Technologies" width="320" height="38">
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="siteNav">メニュー</button>
+            <nav class="site-nav" id="siteNav" aria-label="メイン">
+                <ul>
+                    <li><a href="#services">サービス</a></li>
+                    <li><a href="#cases">実績</a></li>
+                    <li><a href="#profile">代表について</a></li>
+                    <li><a href="#flow">ご依頼の流れ</a></li>
+                    <li><a href="#pricing">料金</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a class="nav-cta" href="#contact">無料で相談する</a></li>
                 </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Header -->
-    <div class="bg"></div>
-    <div class="bg bg2"></div>
-    <div class="bg bg3"></div>
-    <!--
-    <header class="masthead">
-        
-        <div class="container">
-            
-            <div class="intro-text">
-                <div class="intro-heading text-uppercase">Serve as as bridge</div>
-                <div class="intro-lead-in">お客様とITを繋ぐ懸け橋になる</div>
-                
-                <div class="please-scroll">
-                    <a class="nav-link js-scroll-trigger" href="#about">
-                        <p style="color: white;margin-bottom: -4px;margin-top: 50px;">please scroll</p>
-                        <i class="fas fa-angle-double-down fa-stack-1x fa-inverse"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
-    -->
-
-    <header>
-        <div class="container d-flex align-items-center" style="height: 100vh;">
-            <div class="col-12 xm-auto text-center">
-                <p class="mx-auto header_text1" ><b>Serve as a bridge</b></p>
-                <p class="mx-auto header_text2" ><b>あなたとITを繋ぐ懸け橋になる</b></p>
-                <div class="please-scroll">
-                    <a class="nav-link js-scroll-trigger" href="#about">
-                        <p class="header_text3" style="margin-bottom: -4px;margin-top: 50px;">please scroll</p>
-                        <i class="fas fa-angle-double-down fa-stack-1x fa-inverse"></i>
-                    </a>
-                </div>
-            </div>
+            </nav>
         </div>
     </header>
 
+    <main id="top">
 
-    <!-- About -->
-    <section class="bg-white page-section" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading text-uppercase">About</h2>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-bg" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="container">
+                <p class="hero-eyebrow">SaaB Technologies｜東京・埼玉・千葉のITパートナー</p>
+                <h1>
+                    <span class="en">Serve as a bridge</span>
+                    <span class="ja">あなたとITを繋ぐ、懸け橋になる。</span>
+                </h1>
+                <p class="hero-lead">
+                    システム開発・ホームページ制作から、パソコン1台のお困りごとまで。
+                    「誰に頼めばいいか分からない」ITの相談ごとを、
+                    個人事業ならではの柔軟さで、まるごと引き受けます。
+                </p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#contact">無料で相談する</a>
+                    <a class="btn btn-ghost" href="#cases">実績を見る</a>
                 </div>
             </div>
-        </div>
-        <div class="row text-center">
-            <div class="offset-sm-3 col-sm-6">
-                <div class="team-member">
-                    <img class="lazyload mx-auto rounded-circle" data-src="img/about_logo.png" alt="SaaB Technologiesのロゴマーク">
-                    <h5 style="margin-top:20px;margin-bottom: 20px;">SaaB Technologiesは東京、埼玉、千葉をメインの活動エリアとし、総合的なITサービスを提供する事業者です。</h5>
-                    <p class="text-muted">
-                        SaaB Technologiesの<b>"SaaB"</b>は
-                        <br><b>「Serve as a bridge」(懸け橋になる)</b>の略語です。
-                        <br>
-                        <br>昨今、様々なIT製品やITサービスが普及し、非常に便利な世の中になりました。
-                        その影響はビジネスにも大きく波及しており、IT技術を活用すればその多大な恩恵を享受することが出来ます。
-                        しかし、現状は誰しもがそのIT技術を活用する事が出来ているわけではなく、
-                        IT技術に苦手意識があったり、IT技術に関する情報が届きにくい環境にいる方などは
-                        その恩恵を受けられず、IT技術を活用してる方との差がどんどん広がる一方となっています。
-                        そこで私は上記のような方々に対し、分かりやすく、且つ最適な形でIT技術を提供することで
-                        <b>「私がITの活用へ繋がる懸け橋になることで、事業の発展に貢献する」</b>と考え、上記の屋号を制定致しました。
+            <a class="scroll-cue" href="#services">SCROLL</a>
+        </section>
+
+        <!-- Worries -->
+        <section class="section section-wash">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-eyebrow">Worries</span>
+                    <h2>こんなお困りごと、ありませんか？</h2>
+                </div>
+                <div class="worries">
+                    <div class="worry">
+                        <span class="q">ホームページを作りたい</span>
+                        <small>古いまま放置しているサイトの作り直しや、ECサイトの立ち上げも。</small>
+                    </div>
+                    <div class="worry">
+                        <span class="q">手作業の業務が多すぎる</span>
+                        <small>毎月の集計や転記作業は、システムやAIで自動化できます。</small>
+                    </div>
+                    <div class="worry">
+                        <span class="q">社内にITに詳しい人がいない</span>
+                        <small>PCの不調、ネットワーク、機器選びなど、日々の「ちょっと困った」に。</small>
+                    </div>
+                </div>
+                <p class="worries-close">
+                    その「誰に頼めばいいか分からない」を、まとめて引き受けるのが SaaB Technologies です。<br>
+                    屋号の <b>SaaB</b> は <b>「Serve as a bridge」（懸け橋になる）</b>の略。
+                    あなたとITを繋ぐ懸け橋になることが、この屋号に込めた約束です。
+                </p>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="section" id="services">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-eyebrow">Services</span>
+                    <h2>サービス</h2>
+                    <p class="section-lead">
+                        個人事業ならではの、型にはまらない柔軟な対応が強みです。
+                        お客様のご予算と目的に合わせて、最適な製品や技術を選定・提案します。
                     </p>
                 </div>
+                <div class="services">
+                    <div class="service">
+                        <h3>Webサイト構築</h3>
+                        <p>会社ホームページからブログ、ECサイトまで幅広く構築します。公開後の管理・保守まで責任を持って対応します。</p>
+                    </div>
+                    <div class="service">
+                        <h3>社内システム・ツール開発</h3>
+                        <p>社内の環境や課題に合わせて、業務を効率化するシステムを開発します。手作業の自動化をお考えの方はぜひご相談ください。</p>
+                    </div>
+                    <div class="service">
+                        <h3>AI導入・活用支援</h3>
+                        <p>ChatGPT・Claudeなどの生成AIの業務活用を支援します。ツール選定や社内ルールの整備から、AIを組み込んだ業務自動化まで、「何から始めればいいか」の段階からご相談いただけます。</p>
+                    </div>
+                    <div class="service">
+                        <h3>SEO対策</h3>
+                        <p>独自の分析ツールとノウハウで、検索エンジンからの集客を改善します。</p>
+                    </div>
+                    <div class="service">
+                        <h3>IT製品導入支援</h3>
+                        <p>PC・サーバ・プリンタなどの機器から、業務システムやWebサービスまで、選定・導入・環境構築を支援します。</p>
+                    </div>
+                    <div class="service">
+                        <h3>IT製品保守管理</h3>
+                        <p>ウイルス対策・データ整理・動作の高速化など、お使いのIT環境を安心して使い続けられるよう保守管理を代行します。</p>
+                    </div>
+                    <div class="service">
+                        <h3>ITコンサルティング</h3>
+                        <p>お客様の課題を伺い、最適なソリューションを提案します。「何から相談すればいいか分からない」段階でも大丈夫です。</p>
+                    </div>
+                </div>
+                <p class="services-note">上記にないご相談も柔軟に対応します。どんな内容でもお気軽にお問い合わせください。</p>
             </div>
-        </div>
-        <!--<div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">About</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <ul class="timeline">
-            <li>
-              <div class="timeline-image">
-                <img class="lazyload rounded-circle img-fluid" src="img/about/1.jpg" alt="">
-              </div>
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h4>2009-2011</h4>
-                  <h4 class="subheading">Our Humble Beginnings</h4>
-                </div>
-                <div class="timeline-body">
-                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                </div>
-              </div>
-            </li>
-            <li class="timeline-inverted">
-              <div class="timeline-image">
-                <img class="lazyload rounded-circle img-fluid" src="img/about/2.jpg" alt="">
-              </div>
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h4>March 2011</h4>
-                  <h4 class="subheading">An Agency is Born</h4>
-                </div>
-                <div class="timeline-body">
-                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="timeline-image">
-                <img class="lazyload rounded-circle img-fluid" src="img/about/3.jpg" alt="">
-              </div>
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h4>December 2012</h4>
-                  <h4 class="subheading">Transition to Full Service</h4>
-                </div>
-                <div class="timeline-body">
-                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                </div>
-              </div>
-            </li>
-            <li class="timeline-inverted">
-              <div class="timeline-image">
-                <img class="lazyload rounded-circle img-fluid" src="img/about/4.jpg" alt="">
-              </div>
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h4>July 2014</h4>
-                  <h4 class="subheading">Phase Two Expansion</h4>
-                </div>
-                <div class="timeline-body">
-                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                </div>
-              </div>
-            </li>
-            <li class="timeline-inverted">
-              <div class="timeline-image">
-                <h4>Be Part
-                  <br>Of Our
-                  <br>Story!</h4>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div> -->
-    </section>
+        </section>
 
-    <!-- Services -->
-    <section class="bg-light page-section" id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading text-uppercase">Services</h2>
-                    <h3 class="section-subheading text-muted">
-                        法人とは違い、型にはまらない柔軟な対応が可能です。<br>お客様のニーズに合わせ、適切な製品や技術の選定･提案を致します。
-                    </h3>
+        <!-- Cases -->
+        <section class="section section-wash" id="cases">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-eyebrow">Cases</span>
+                    <h2>これまでの実績</h2>
+                    <p class="section-lead">Web制作からインフラ構築、業務自動化まで。カードを選ぶと詳細をご覧いただけます。</p>
                 </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fas fa-file-code fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">WEBサイト構築</h4>
-                    <p class="text-muted">会社ホームページやブログ、ECサイトまで多岐に渡って構築が可能です。構築後の管理、保守まで責任を持って対応しております。</p>
+                <div class="case-filter" role="group" aria-label="実績をカテゴリで絞り込む">
+                    <button type="button" data-filter="all" aria-pressed="true">すべて</button>
+                    <button type="button" data-filter="Web開発" aria-pressed="false">Web開発</button>
+                    <button type="button" data-filter="システム開発" aria-pressed="false">システム開発</button>
+                    <button type="button" data-filter="IT製品導入支援" aria-pressed="false">IT製品導入支援</button>
+                    <button type="button" data-filter="IT製品保守管理" aria-pressed="false">IT製品保守管理</button>
+                    <button type="button" data-filter="自社サービス" aria-pressed="false">自社サービス</button>
+                    <button type="button" data-filter="メディア運営" aria-pressed="false">メディア運営</button>
                 </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fas fa-laptop-code fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">社内システム･ツール開発</h4>
-                    <p class="text-muted">お客様の社内環境や課題、目的に合わせて、最適なシステムの開発を致します。業務効率化を検討されている方は是非お問い合わせください。</p>
+                <div class="cases">
+                    <article class="case">
+                        <div class="case-media"><img src="img/cases/mayudama.jpg" alt="古民家型民泊施設のホームページ" loading="lazy" width="800" height="393"></div>
+                        <div class="case-body">
+                            <div class="case-meta"><span class="case-tag">Web開発</span><span class="case-date">2018年10月</span></div>
+                            <h3>古民家型民泊施設ホームページの改修・SEO対応</h3>
+                        </div>
+                        <button class="case-open" type="button" data-dialog="caseDialog1" aria-haspopup="dialog" aria-label="詳細を見る: 古民家型民泊施設ホームページの改修・SEO対応"></button>
+                    </article>
+                    <article class="case">
+                        <div class="case-media"><img src="img/cases/space_quartet.jpg" alt="バイオリンECサイト" loading="lazy" width="800" height="532"></div>
+                        <div class="case-body">
+                            <div class="case-meta"><span class="case-tag">Web開発</span><span class="case-date">2018年12月</span></div>
+                            <h3>バイオリンECサイト構築</h3>
+                        </div>
+                        <button class="case-open" type="button" data-dialog="caseDialog2" aria-haspopup="dialog" aria-label="詳細を見る: バイオリンECサイト構築"></button>
+                    </article>
+                    <article class="case">
+                        <div class="case-media"><img src="img/cases/reji.jpg" alt="タブレットPOSレジ" loading="lazy" width="640" height="426"></div>
+                        <div class="case-body">
+                            <div class="case-meta"><span class="case-tag">IT製品導入支援</span><span class="case-date">2018年7月</span></div>
+                            <h3>タブレットPOSレジ（Airレジ）導入支援</h3>
+                        </div>
+                        <button class="case-open" type="button" data-dialog="caseDialog3" aria-haspopup="dialog" aria-label="詳細を見る: タブレットPOSレジ（Airレジ）導入支援"></button>
+                    </article>
+                    <article class="case">
+                        <div class="case-media"><img src="img/cases/syuki-n.jpg" alt="勤怠システムの画面" loading="lazy" width="800" height="337"></div>
+                        <div class="case-body">
+                            <div class="case-meta"><span class="case-tag">IT製品導入支援</span><span class="case-date">2019年1月</span></div>
+                            <h3>勤怠・給与計算の自動化（シュキーン導入）</h3>
+                        </div>
+                        <button class="case-open" type="button" data-dialog="caseDialog4" aria-haspopup="dialog" aria-label="詳細を見る: 勤怠・給与計算の自動化（シュキーン導入）"></button>
+                    </article>
+                    <article class="case">
+                        <div class="case-media"><img src="img/cases/mentenans.jpg" alt="PCメンテナンスの様子" loading="lazy" width="640" height="405"></div>
+                        <div class="case-body">
+                            <div class="case-meta"><span class="case-tag">IT製品保守管理</span><span class="case-date">2018年12月〜</span></div>
+                            <h3>PC定期メンテナンス</h3>
+                        </div>
+                        <button class="case-open" type="button" data-dialog="caseDialog5" aria-haspopup="dialog" aria-label="詳細を見る: PC定期メンテナンス"></button>
+                    </article>
+                    <article class="case">
+                        <div class="case-media"><img src="img/cases/nas.jpg" alt="NASサーバ" loading="lazy" width="640" height="360"></div>
+                        <div class="case-body">
+                            <div class="case-meta"><span class="case-tag">IT製品導入支援</span><span class="case-date">2019年6月</span></div>
+                            <h3>NASサーバ構築</h3>
+                        </div>
+                        <button class="case-open" type="button" data-dialog="caseDialog6" aria-haspopup="dialog" aria-label="詳細を見る: NASサーバ構築"></button>
+                    </article>
+                    <article class="case">
+                        <div class="case-media"><img src="img/cases/vpn.jpg" alt="ネットワーク機器" loading="lazy" width="800" height="533"></div>
+                        <div class="case-body">
+                            <div class="case-meta"><span class="case-tag">IT製品導入支援</span><span class="case-date">2019年8月</span></div>
+                            <h3>多拠点間VPN環境構築</h3>
+                        </div>
+                        <button class="case-open" type="button" data-dialog="caseDialog7" aria-haspopup="dialog" aria-label="詳細を見る: 多拠点間VPN環境構築"></button>
+                    </article>
+                    <article class="case">
+                        <div class="case-media"><img src="img/cases/programing.jpg" alt="プログラミングの画面" loading="lazy" width="800" height="533"></div>
+                        <div class="case-body">
+                            <div class="case-meta"><span class="case-tag">システム開発</span><span class="case-date">2019年9月</span></div>
+                            <h3>システム間データ変換・移行ツール開発</h3>
+                        </div>
+                        <button class="case-open" type="button" data-dialog="caseDialog8" aria-haspopup="dialog" aria-label="詳細を見る: システム間データ変換・移行ツール開発"></button>
+                    </article>
+                    <article class="case">
+                        <div class="case-media"><img src="img/cases/figomens.jpg" alt="アフィリエイト対応したサイト" loading="lazy" width="800" height="376"></div>
+                        <div class="case-body">
+                            <div class="case-meta"><span class="case-tag">Web開発</span><span class="case-date">2019年5月</span></div>
+                            <h3>既存サイトのアフィリエイト対応</h3>
+                        </div>
+                        <button class="case-open" type="button" data-dialog="caseDialog9" aria-haspopup="dialog" aria-label="詳細を見る: 既存サイトのアフィリエイト対応"></button>
+                    </article>
+                    <article class="case">
+                        <div class="case-media"><img src="img/cases/figo-price.jpg" alt="料金計算ページ" loading="lazy" width="800" height="376"></div>
+                        <div class="case-body">
+                            <div class="case-meta"><span class="case-tag">Web開発</span><span class="case-date">2019年9月</span></div>
+                            <h3>料金計算ページの刷新</h3>
+                        </div>
+                        <button class="case-open" type="button" data-dialog="caseDialog10" aria-haspopup="dialog" aria-label="詳細を見る: 料金計算ページの刷新"></button>
+                    </article>
+                    <article class="case">
+                        <div class="case-media"><img src="img/cases/con-cafejp.jpg" alt="全国コンカフェマップ" loading="lazy" width="800" height="331"></div>
+                        <div class="case-body">
+                            <div class="case-meta"><span class="case-tag">自社サービス</span><span class="case-date">2020年1月</span></div>
+                            <h3>「全国コンカフェマップ」開発・運営</h3>
+                        </div>
+                        <button class="case-open" type="button" data-dialog="caseDialog11" aria-haspopup="dialog" aria-label="詳細を見る: 「全国コンカフェマップ」開発・運営"></button>
+                    </article>
+                    <article class="case">
+                        <div class="case-media"><img src="img/cases/onsenhap.jpg" alt="入浴剤ECサイト" loading="lazy" width="800" height="405"></div>
+                        <div class="case-body">
+                            <div class="case-meta"><span class="case-tag">Web開発</span><span class="case-date">2021年4月</span></div>
+                            <h3>入浴剤ECサイト構築</h3>
+                        </div>
+                        <button class="case-open" type="button" data-dialog="caseDialog12" aria-haspopup="dialog" aria-label="詳細を見る: 入浴剤ECサイト構築"></button>
+                    </article>
+                    <article class="case">
+                        <div class="case-media case-media-text"><span>求人系<br>Webサービス</span></div>
+                        <div class="case-body">
+                            <div class="case-meta"><span class="case-tag">Web開発</span><span class="case-date">2020年10月〜</span></div>
+                            <h3>求人系Webサービスのバックエンド開発</h3>
+                        </div>
+                        <button class="case-open" type="button" data-dialog="caseDialog13" aria-haspopup="dialog" aria-label="詳細を見る: 求人系Webサービスのバックエンド開発"></button>
+                    </article>
+                    <article class="case">
+                        <div class="case-media case-media-text"><span>Webメディア<br>運営</span></div>
+                        <div class="case-body">
+                            <div class="case-meta"><span class="case-tag">メディア運営</span><span class="case-date">2024年11月〜</span></div>
+                            <h3>Webメディア運営</h3>
+                        </div>
+                        <button class="case-open" type="button" data-dialog="caseDialog14" aria-haspopup="dialog" aria-label="詳細を見る: Webメディア運営"></button>
+                    </article>
                 </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fas fa-chart-line fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">SEO対策</h4>
-                    <p class="text-muted">独自の分析ツール、ノウハウを用いてサイトのSEO対策を施します。</p>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fas fa-server fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">IT製品導入支援</h4>
-                    <p class="text-muted">PC、各種サーバ、プリンタ等の物理製品から、業務システム、アプリ、WEBサービス等のIT製品まで、多岐に渡って導入、環境構築の支援を致します。</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fas fa-tools fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">IT製品保守管理</h4>
-                    <p class="text-muted">
-                        お客様が保持されているIT製品について、安全･安心にご利用いただけるよう保守管理を代行致します。ウイルス対策やデータクリーニング、パフォーマンス高速化等、多角的な観点から保守管理を実施し、常に快適なIT環境を保持します。
-                    </p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fas fa-chalkboard-teacher fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">ITコンサルティング</h4>
-                    <p class="text-muted">お客様の課題等を伺い、最適なソリューションを提案致します。</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <p class="large text-muted">その他のサービスについても柔軟に対応致しますので、どんな内容でもお気軽にお問い合わせください。</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Cases Grid -->
-    <section class="bg-white page-section" id="Cases">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading text-uppercase">Cases</h2>
-                    <h3 class="section-subheading text-muted">過去の実績一覧です。</h3>
-                </div>
+                <!-- Case dialogs -->
+                <dialog class="case-dialog" id="caseDialog1" aria-labelledby="caseDialog1Title">
+                    <button class="dialog-close" type="button" aria-label="閉じる">✕</button>
+                    <div class="dialog-media"><img src="img/cases/mayudama.jpg" alt="" loading="lazy" width="800" height="393"></div>
+                    <div class="dialog-body">
+                        <div class="case-meta"><span class="case-tag">Web開発</span><span class="case-date">2018年10月</span></div>
+                        <h3 id="caseDialog1Title">古民家型民泊施設ホームページの改修・SEO対応</h3>
+                        <p>古民家の雰囲気がより伝わるよう、写真を活かした構成に改修しました（PC・スマホ両対応）。あわせてSEO対策も実施しています。</p>
+                        <p>URL: <a href="https://mayudamahouse.net" target="_blank" rel="noopener">mayudamahouse.net</a></p>
+                        <p class="case-client">Client: 合同会社 次代ライフスタイルメーカー 様</p>
+                    </div>
+                </dialog>
+                <dialog class="case-dialog" id="caseDialog2" aria-labelledby="caseDialog2Title">
+                    <button class="dialog-close" type="button" aria-label="閉じる">✕</button>
+                    <div class="dialog-media"><img src="img/cases/space_quartet.jpg" alt="" loading="lazy" width="800" height="532"></div>
+                    <div class="dialog-body">
+                        <div class="case-meta"><span class="case-tag">Web開発</span><span class="case-date">2018年12月</span></div>
+                        <h3 id="caseDialog2Title">バイオリンECサイト構築</h3>
+                        <p>オープンソースの「EC-CUBE」を用いてECサイトを新規構築しました。競合の激しいEC業界で差別化を図るため、オリジナリティのあるデザインに仕上げています（現在は閉鎖済み）。</p>
+                        <p class="case-client">Client: Space Quartet&amp;Co. 様</p>
+                    </div>
+                </dialog>
+                <dialog class="case-dialog" id="caseDialog3" aria-labelledby="caseDialog3Title">
+                    <button class="dialog-close" type="button" aria-label="閉じる">✕</button>
+                    <div class="dialog-media"><img src="img/cases/reji.jpg" alt="" loading="lazy" width="640" height="426"></div>
+                    <div class="dialog-body">
+                        <div class="case-meta"><span class="case-tag">IT製品導入支援</span><span class="case-date">2018年7月</span></div>
+                        <h3 id="caseDialog3Title">タブレットPOSレジ（Airレジ）導入支援</h3>
+                        <p>飲食店のPOSシステムを刷新するため、POSレジアプリ「<a href="https://airregi.jp/" target="_blank" rel="noopener">Airレジ</a>」を導入しました。従来のPOSレジと比べて商品編集・税率設定・レジ締め・売上分析が格段にやりやすくなり、業務効率化に大きく寄与しました。</p>
+                        <p class="case-client">Client: 株式会社松高 様</p>
+                    </div>
+                </dialog>
+                <dialog class="case-dialog" id="caseDialog4" aria-labelledby="caseDialog4Title">
+                    <button class="dialog-close" type="button" aria-label="閉じる">✕</button>
+                    <div class="dialog-media"><img src="img/cases/syuki-n.jpg" alt="" loading="lazy" width="800" height="337"></div>
+                    <div class="dialog-body">
+                        <div class="case-meta"><span class="case-tag">IT製品導入支援</span><span class="case-date">2019年1月</span></div>
+                        <h3 id="caseDialog4Title">勤怠・給与計算の自動化（シュキーン導入）</h3>
+                        <p>タブレットをタイムカード代わりにできるアプリ「<a href="https://www.shukiin.com/" target="_blank" rel="noopener">シュキーン</a>」とVBAを組み合わせ、勤怠管理と給与自動計算のシステムを構築しました。導入前は毎月丸1日かけて手作業で行っていた給与計算が、完全自動でできるようになりました。</p>
+                        <p class="case-client">Client: 株式会社松高 様</p>
+                    </div>
+                </dialog>
+                <dialog class="case-dialog" id="caseDialog5" aria-labelledby="caseDialog5Title">
+                    <button class="dialog-close" type="button" aria-label="閉じる">✕</button>
+                    <div class="dialog-media"><img src="img/cases/mentenans.jpg" alt="" loading="lazy" width="640" height="405"></div>
+                    <div class="dialog-body">
+                        <div class="case-meta"><span class="case-tag">IT製品保守管理</span><span class="case-date">2018年12月〜</span></div>
+                        <h3 id="caseDialog5Title">PC定期メンテナンス</h3>
+                        <p>オフィスで利用されているPCに対し、ソフトウェアアップデート・ウイルスチェック・ディスククリーニングを定期実施しています。トラブル発生時には対象PCを遠隔操作して即座に対処。古くなったPCの買替提案・実施も行っています。</p>
+                        <p class="case-client">Client: 株式会社三巧クリーン 様</p>
+                    </div>
+                </dialog>
+                <dialog class="case-dialog" id="caseDialog6" aria-labelledby="caseDialog6Title">
+                    <button class="dialog-close" type="button" aria-label="閉じる">✕</button>
+                    <div class="dialog-media"><img src="img/cases/nas.jpg" alt="" loading="lazy" width="640" height="360"></div>
+                    <div class="dialog-body">
+                        <div class="case-meta"><span class="case-tag">IT製品導入支援</span><span class="case-date">2019年6月</span></div>
+                        <h3 id="caseDialog6Title">NASサーバ構築</h3>
+                        <p>ネットワーク経由でアクセスできるファイルサーバ（NAS）を新規構築・導入しました。それまで業務ファイルは各従業員のPCに保存されメールでやり取りされていましたが、NASの導入により管理の手間とファイル消失のリスクを大幅に低減できました。</p>
+                        <p class="case-client">Client: 株式会社三巧クリーン 様</p>
+                    </div>
+                </dialog>
+                <dialog class="case-dialog" id="caseDialog7" aria-labelledby="caseDialog7Title">
+                    <button class="dialog-close" type="button" aria-label="閉じる">✕</button>
+                    <div class="dialog-media"><img src="img/cases/vpn.jpg" alt="" loading="lazy" width="800" height="533"></div>
+                    <div class="dialog-body">
+                        <div class="case-meta"><span class="case-tag">IT製品導入支援</span><span class="case-date">2019年8月</span></div>
+                        <h3 id="caseDialog7Title">多拠点間VPN環境構築</h3>
+                        <p>オフィス拠点の増設に伴い、拠点間を繋ぐ社内ネットワークを構築しました。どの拠点からもNASサーバへアクセスできるなど、全拠点で同一の環境で業務ができるようになりました。</p>
+                        <p class="case-client">Client: 株式会社三巧クリーン 様</p>
+                    </div>
+                </dialog>
+                <dialog class="case-dialog" id="caseDialog8" aria-labelledby="caseDialog8Title">
+                    <button class="dialog-close" type="button" aria-label="閉じる">✕</button>
+                    <div class="dialog-media"><img src="img/cases/programing.jpg" alt="" loading="lazy" width="800" height="533"></div>
+                    <div class="dialog-body">
+                        <div class="case-meta"><span class="case-tag">システム開発</span><span class="case-date">2019年9月</span></div>
+                        <h3 id="caseDialog8Title">システム間データ変換・移行ツール開発</h3>
+                        <p>社内の業務管理システムのデータを、自動で経理システムへ移行するツールを開発・導入しました。導入前は出力データを手動で整形・書き換えして取り込んでいましたが、その作業を自動化し業務効率化に大きく貢献しました。</p>
+                        <p class="case-client">Client: 株式会社ビーエス観光 様</p>
+                    </div>
+                </dialog>
+                <dialog class="case-dialog" id="caseDialog9" aria-labelledby="caseDialog9Title">
+                    <button class="dialog-close" type="button" aria-label="閉じる">✕</button>
+                    <div class="dialog-media"><img src="img/cases/figomens.jpg" alt="" loading="lazy" width="800" height="376"></div>
+                    <div class="dialog-body">
+                        <div class="case-meta"><span class="case-tag">Web開発</span><span class="case-date">2019年5月</span></div>
+                        <h3 id="caseDialog9Title">既存サイトのアフィリエイト対応</h3>
+                        <p>アフィリエイト広告の導入に対応するためのシステムを構築しました。複数のアフィリエイト会社に対応できるよう汎用的な設計とし、利便性を向上させています。</p>
+                        <p class="case-client">Client: 株式会社jacat 様</p>
+                    </div>
+                </dialog>
+                <dialog class="case-dialog" id="caseDialog10" aria-labelledby="caseDialog10Title">
+                    <button class="dialog-close" type="button" aria-label="閉じる">✕</button>
+                    <div class="dialog-media"><img src="img/cases/figo-price.jpg" alt="" loading="lazy" width="800" height="376"></div>
+                    <div class="dialog-body">
+                        <div class="case-meta"><span class="case-tag">Web開発</span><span class="case-date">2019年9月</span></div>
+                        <h3 id="caseDialog10Title">料金計算ページの刷新</h3>
+                        <p>サービスの料金計算ページを刷新しました。既存ページのデザイン性・操作性の課題を解消し、分かりやすく操作しやすいページへ改修しています。</p>
+                        <p class="case-client">Client: 株式会社jacat 様</p>
+                    </div>
+                </dialog>
+                <dialog class="case-dialog" id="caseDialog11" aria-labelledby="caseDialog11Title">
+                    <button class="dialog-close" type="button" aria-label="閉じる">✕</button>
+                    <div class="dialog-media"><img src="img/cases/con-cafejp.jpg" alt="" loading="lazy" width="800" height="331"></div>
+                    <div class="dialog-body">
+                        <div class="case-meta"><span class="case-tag">自社サービス</span><span class="case-date">2020年1月</span></div>
+                        <h3 id="caseDialog11Title">「全国コンカフェマップ」開発・運営</h3>
+                        <p>コンセプトカフェの店舗情報をまとめたポータルサイトを自社開発しました。店舗情報はGoogleスプレッドシートで管理し、APIで自動投稿できる仕組みにしています。</p>
+                        <p>2022年に事業売却し、売却先法人のCTOに就任。2024年11月、売却先の会社売却に伴いCTOを退任しました。</p>
+                        <p>URL: <a href="https://con-cafe.jp" target="_blank" rel="noopener">con-cafe.jp</a></p>
+                        <p class="case-client">自社サービス（事業売却済み）</p>
+                    </div>
+                </dialog>
+                <dialog class="case-dialog" id="caseDialog12" aria-labelledby="caseDialog12Title">
+                    <button class="dialog-close" type="button" aria-label="閉じる">✕</button>
+                    <div class="dialog-media"><img src="img/cases/onsenhap.jpg" alt="" loading="lazy" width="800" height="405"></div>
+                    <div class="dialog-body">
+                        <div class="case-meta"><span class="case-tag">Web開発</span><span class="case-date">2021年4月</span></div>
+                        <h3 id="caseDialog12Title">入浴剤ECサイト構築</h3>
+                        <p>草津温泉の湯そのものが入った入浴剤のECサイトを構築しました。EC-CUBE 4をベースに、同意書への同意取得や柔軟な購入制限などの機能を追加開発しています。</p>
+                        <p>URL: <a href="https://kusatsu-onsenhap.com" target="_blank" rel="noopener">kusatsu-onsenhap.com</a></p>
+                        <p class="case-client">Client: 有限会社駿河屋商店 様</p>
+                    </div>
+                </dialog>
+                <dialog class="case-dialog" id="caseDialog13" aria-labelledby="caseDialog13Title">
+                    <button class="dialog-close" type="button" aria-label="閉じる">✕</button>
+                    <div class="case-media case-media-text"><span>求人系<br>Webサービス</span></div>
+                    <div class="dialog-body">
+                        <div class="case-meta"><span class="case-tag">Web開発</span><span class="case-date">2020年10月〜</span></div>
+                        <h3 id="caseDialog13Title">求人系Webサービスのバックエンド開発</h3>
+                        <p>HRTech系求人Webサービスのバックエンド開発を担当。バックエンド領域のテックリードとして、設計・開発からマネジメント・提案まで幅広い業務に従事しています。</p>
+                        <p>使用技術: PHP (Laravel) / Go / MySQL / AWS / Docker など</p>
+                        <p class="case-client">業務委託</p>
+                    </div>
+                </dialog>
+                <dialog class="case-dialog" id="caseDialog14" aria-labelledby="caseDialog14Title">
+                    <button class="dialog-close" type="button" aria-label="閉じる">✕</button>
+                    <div class="case-media case-media-text"><span>Webメディア<br>運営</span></div>
+                    <div class="dialog-body">
+                        <div class="case-meta"><span class="case-tag">メディア運営</span><span class="case-date">2024年11月〜</span></div>
+                        <h3 id="caseDialog14Title">Webメディア運営</h3>
+                        <p>宅食・完全栄養食など、食生活をスマートにする製品を紹介する「<a href="https://smart-food-navi.jp" target="_blank" rel="noopener">スマートフードナビ</a>」と、ドラマ・アーティスト・マンガなどのエンタメ情報を扱うトレンドブログ「<a href="https://mochiodays.com/" target="_blank" rel="noopener">ももっとログ</a>」を運営しています。</p>
+                        <p class="case-client">自社メディア</p>
+                    </div>
+                </dialog>
             </div>
-            <div class="row">
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a class="portfolio-link" aria-label="portfolio1" data-toggle="modal" href="#portfolioModal1">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fas fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="lazyload img-fluid" data-src="img/mayudama.jpg" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>古民家型民泊施設ホームページの改修対応</h4>
-                        <p class="text-muted">Web開発</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a class="portfolio-link" aria-label="portfolio2" data-toggle="modal" href="#portfolioModal2">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fas fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="lazyload img-fluid" data-src="img/space_quartet.jpg" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>バイオリンECサイト構築</h4>
-                        <p class="text-muted">Web開発</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a class="portfolio-link" aria-label="portfolio3" data-toggle="modal" href="#portfolioModal3">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fas fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="lazyload img-fluid" data-src="img/reji.jpg" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>タブレットPOSレジ(Airレジ)導入支援</h4>
-                        <p class="text-muted">IT製品導入支援</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a class="portfolio-link" aria-label="portfolio4" data-toggle="modal" href="#portfolioModal4">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fas fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="lazyload img-fluid" data-src="img/syuki-n.jpg" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>勤怠システム(シュキーン)導入支援</h4>
-                        <p class="text-muted">IT製品導入支援</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a class="portfolio-link" aria-label="portfolio5" data-toggle="modal" href="#portfolioModal5">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fas fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="lazyload img-fluid" data-src="img/mentenans.jpg" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>PC定期メンテナンス</h4>
-                        <p class="text-muted">IT製品保守管理</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a class="portfolio-link" aria-label="portfolio6" data-toggle="modal" href="#portfolioModal6">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fas fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="lazyload img-fluid" data-src="img/nas.jpg" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>NASサーバ構築</h4>
-                        <p class="text-muted">IT製品導入支援</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a class="portfolio-link" aria-label="portfolio7" data-toggle="modal" href="#portfolioModal7">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fas fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="lazyload img-fluid" data-src="img/vpn.jpg" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>多拠点間VPN環境構築</h4>
-                        <p class="text-muted">IT製品導入支援</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a class="portfolio-link" aria-label="portfolio8" data-toggle="modal" href="#portfolioModal8">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fas fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="lazyload img-fluid" data-src="img/programing.jpg" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>システム間データ変換･移行ツール開発</h4>
-                        <p class="text-muted">システム開発</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a class="portfolio-link" aria-label="portfolio9" data-toggle="modal" href="#portfolioModal9">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fas fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="lazyload img-fluid" data-src="img/figomens.png" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>既存サイトアフィリエイト対応</h4>
-                        <p class="text-muted">web開発</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a class="portfolio-link" aria-label="portfolio10" data-toggle="modal" href="#portfolioModal10">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fas fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="lazyload img-fluid" data-src="img/figo-price.png" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>料金計算ページ作成</h4>
-                        <p class="text-muted">web開発</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a class="portfolio-link" aria-label="portfolio10" data-toggle="modal" href="#portfolioModal11">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fas fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="lazyload img-fluid" data-src="img/con-cafejp.png" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>コンセプトカフェ情報サイト作成</h4>
-                        <p class="text-muted">web開発</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a class="portfolio-link" aria-label="portfolio10" data-toggle="modal" href="#portfolioModal12">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fas fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="lazyload img-fluid" data-src="img/onsenhap.jpg" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>入浴剤ECサイト構築</h4>
-                        <p class="text-muted">web開発</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a class="portfolio-link" aria-label="portfolio11" data-toggle="modal" href="#portfolioModal13">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fas fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="lazyload img-fluid" data-src="img/about_logo.png" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>求人系Webサービス</h4>
-                        <p class="text-muted">web(バックエンド)開発</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a class="portfolio-link" aria-label="portfolio11" data-toggle="modal" href="#portfolioModal14">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fas fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="lazyload img-fluid" data-src="img/about_logo.png" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Webメディア運営</h4>
-                        <p class="text-muted">メディア運営</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Who are me -->
-    <section class="bg-light page-section" id="Whoami">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading text-uppercase">Who are me</h2>
-                    <h3 class="section-subheading text-muted">
-                        代表の菅家 裕について。また、提供できる技術内容について記載しています。
-                    </h3>
+        <!-- Profile -->
+        <section class="section" id="profile">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-eyebrow">Profile</span>
+                    <h2>代表について</h2>
                 </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-sm-6 align-self-center">
-                    <div class="team-member">
-                        <img class="lazyload mx-auto rounded-circle" data-src="img/yukanke1.jpg" alt="">
-                        <h4>菅家 裕(Yu Kanke)</h4>
-                        <p class="text-muted">
-                            【代表･フルスタックエンジニア】
-                            <br>東京都在住。28歳。
-                            <br>情報処理科の専門学校を卒業した後、新卒でメーカー系SIerへ入社。
-                            業務経験を3年半積んだ後に独立しSaaB Technologiesを発足。
-                            <br>2022年には自社サービスの「全国コンカフェマップ」を事業売却し、売却先法人のCTOに就任。
-                            <br>多彩な業務経験により、ITに関する事であれば多彩な対応が可能です。
-                            <br>趣味はレーシングカートやドライブ、ソフトテニスなど。
+                <div class="profile">
+                    <div class="profile-card">
+                        <img src="img/yukanke1.jpg" alt="代表 菅家裕の写真" width="132" height="132">
+                        <h3>菅家 裕</h3>
+                        <p class="en">YU KANKE</p>
+                        <p class="role">代表・フルスタックエンジニア</p>
+                        <p>
+                            東京都在住。開発からインフラ、機器の導入まで、ITに関することなら幅広く対応できるのが強みです。
+                            趣味はレーシングカート、ドライブ、ソフトテニス。
                         </p>
-                        <!--
-                        <ul class="list-inline social-buttons">
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                            </li>
+                    </div>
+                    <div class="profile-body">
+                        <h3>経歴</h3>
+                        <ul class="milestones">
+                            <li><span class="year">〜2014</span>情報処理科の専門学校を卒業後、新卒でメーカー系SIerに入社。</li>
+                            <li><span class="year">2018</span>独立し、SaaB Technologies を発足。</li>
+                            <li><span class="year">2020</span>求人系Webサービスの開発にバックエンドテックリードとして参画。</li>
+                            <li><span class="year">2022</span>自社サービス「全国コンカフェマップ」を事業売却。売却先法人のCTOに就任。</li>
+                            <li><span class="year">2024</span>売却先の会社売却に伴いCTOを退任。Webメディア運営を開始。</li>
                         </ul>
-                        -->
+                        <h3>対応できる技術領域</h3>
+                        <dl class="skill-groups">
+                            <div class="skill-group">
+                                <dt>バックエンド</dt>
+                                <dd><span class="chip">PHP / Laravel</span><span class="chip">Go</span><span class="chip">Python</span><span class="chip">MySQL / SQL</span><span class="chip">VB.NET</span></dd>
+                            </div>
+                            <div class="skill-group">
+                                <dt>フロントエンド</dt>
+                                <dd><span class="chip">HTML / CSS</span><span class="chip">JavaScript</span><span class="chip">jQuery</span></dd>
+                            </div>
+                            <div class="skill-group">
+                                <dt>インフラ・クラウド</dt>
+                                <dd><span class="chip">AWS</span><span class="chip">Docker</span><span class="chip">Linux</span><span class="chip">Nginx</span><span class="chip">Jenkins</span><span class="chip">Git</span></dd>
+                            </div>
+                            <div class="skill-group">
+                                <dt>AI活用</dt>
+                                <dd><span class="chip">生成AI (ChatGPT / Claude)</span><span class="chip">API連携・業務組み込み</span></dd>
+                            </div>
+                            <div class="skill-group">
+                                <dt>業務効率化</dt>
+                                <dd><span class="chip">VBA</span><span class="chip">WinActor (RPA)</span></dd>
+                            </div>
+                            <div class="skill-group">
+                                <dt>CMS・EC</dt>
+                                <dd><span class="chip">WordPress</span><span class="chip">EC-CUBE</span><span class="chip">Alfresco</span></dd>
+                            </div>
+                        </dl>
                     </div>
                 </div>
-                <div class="col-sm-6">
-                    <div class="row">
-                        <div class="col-12">
-                            <canvas id="SkillChart1"></canvas>
+            </div>
+        </section>
+
+        <!-- Flow -->
+        <section class="section section-wash" id="flow">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-eyebrow">Flow</span>
+                    <h2>ご依頼の流れ</h2>
+                </div>
+                <div class="flow">
+                    <div class="flow-step">
+                        <h3>ご相談</h3>
+                        <p>お問い合わせフォームからご連絡ください。「何をどう頼めばいいか分からない」段階で大丈夫です。</p>
+                    </div>
+                    <div class="flow-step">
+                        <h3>ヒアリング・お見積り</h3>
+                        <p>現状のお困りごとやご予算を伺い、最適な方法とお見積りを提示します。ここまで費用はかかりません。</p>
+                    </div>
+                    <div class="flow-step">
+                        <h3>ご契約・実施</h3>
+                        <p>内容にご納得いただけたら着手します。進捗はこまめに共有し、途中の方針変更にも柔軟に対応します。</p>
+                    </div>
+                    <div class="flow-step">
+                        <h3>納品・アフターフォロー</h3>
+                        <p>納品して終わりではなく、使い方のレクチャーや保守・運用まで継続してサポートできます。</p>
+                    </div>
+                </div>
+                <p class="flow-note"><strong>ご相談からお見積りまでは無料</strong>です。まずはお気軽にご連絡ください。</p>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section class="section" id="pricing">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-eyebrow">Pricing</span>
+                    <h2>料金の考え方</h2>
+                    <p class="section-lead">
+                        案件の内容によって最適な形が異なるため、固定の料金表は設けていません。
+                        その代わり、次の3つをお約束します。
+                    </p>
+                </div>
+                <div class="pricing">
+                    <div class="price-card">
+                        <h3>相談・お見積り</h3>
+                        <span class="big">無料</span>
+                        <p>ヒアリングとお見積りの提示までは、何度でも無料です。見積り後に断っていただいても構いません。</p>
+                    </div>
+                    <div class="price-card">
+                        <h3>明朗会計</h3>
+                        <span class="big">想定外の請求なし</span>
+                        <p>原則、着手前にお見積りを提示します。調査してみないと金額を確定できない場合も、その理由と見込みを先にご説明し、費用が変わりそうなときは必ず事前にご相談のうえで進めます。</p>
+                    </div>
+                    <div class="price-card">
+                        <h3>ご予算に合わせて</h3>
+                        <span class="big">柔軟対応</span>
+                        <p>ご予算が限られている場合は、優先順位をつけた段階的な進め方（スモールスタート）を提案します。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section section-wash" id="faq">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-eyebrow">FAQ</span>
+                    <h2>よくあるご質問</h2>
+                </div>
+                <div class="faq">
+                    <details>
+                        <summary>ITにまったく詳しくないのですが、相談できますか？</summary>
+                        <p class="a">はい、むしろそういった方のための事業です。専門用語を使わず、分かりやすい言葉で説明することを大切にしています。</p>
+                    </details>
+                    <details>
+                        <summary>相談や見積りだけでも料金はかかりますか？</summary>
+                        <p class="a">かかりません。ご相談からお見積りの提示までは無料です。内容と金額にご納得いただいてからのご契約となります。</p>
+                    </details>
+                    <details>
+                        <summary>対応エリアはどこまでですか？</summary>
+                        <p class="a">訪問が必要な作業は東京・埼玉・千葉が中心です。Web制作やシステム開発などリモートで完結する案件は、全国どこからでもご依頼いただけます。</p>
+                    </details>
+                    <details>
+                        <summary>パソコン1台の不調など、小さな相談でも頼めますか？</summary>
+                        <p class="a">もちろんです。「こんな小さなことで頼んでいいのかな」という内容こそ、お気軽にご相談ください。</p>
+                    </details>
+                    <details>
+                        <summary>他社で作ったシステムやサイトの保守だけをお願いできますか？</summary>
+                        <p class="a">可能です。現状を調査した上で、引き継ぎ可能かどうかも含めてご回答します。</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-eyebrow">Contact</span>
+                    <h2>お問い合わせ</h2>
+                    <p class="section-lead">どんな内容でもお気軽にどうぞ。通常2営業日以内にご返信します。</p>
+                </div>
+                <div class="contact-form">
+                    <form action="https://docs.google.com/forms/d/e/1FAIpQLSeDl7m8GDCWLAI_EY3pI7QX4P7edDlF5OGjAsbRBnMsac_pBQ/formResponse"
+                        method="post" target="hiddenSubmitFrame" id="contactForm" novalidate>
+                        <div class="form-field">
+                            <label for="name">お名前<span class="req">必須</span></label>
+                            <input id="name" name="entry.126793355" type="text" autocomplete="name" required>
+                            <p class="form-error">お名前を入力してください。</p>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <canvas id="SkillChart2"></canvas>
+                        <div class="form-field">
+                            <label for="email">メールアドレス<span class="req">必須</span></label>
+                            <input id="email" name="entry.681591770" type="email" autocomplete="email" required>
+                            <p class="form-error">正しいメールアドレスを入力してください。</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Team -->
-
-    <!--
-    <section class="bg-light page-section" id="team">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img class="lazyload mx-auto rounded-circle" src="img/team/1.jpg" alt="">
-                        <h4>Kay Garland</h4>
-                        <p class="text-muted">Lead Designer</p>
-                        <ul class="list-inline social-buttons">
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img class="lazyload mx-auto rounded-circle" src="img/team/2.jpg" alt="">
-                        <h4>Larry Parker</h4>
-                        <p class="text-muted">Lead Marketer</p>
-                        <ul class="list-inline social-buttons">
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img class="lazyload mx-auto rounded-circle" src="img/team/3.jpg" alt="">
-                        <h4>Diana Pertersen</h4>
-                        <p class="text-muted">Lead Developer</p>
-                        <ul class="list-inline social-buttons">
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque,
-                        laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    -->
-
-    <!-- Clients -->
-
-    <!--
-    <section class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img class="lazyload img-fluid d-block mx-auto" src="img/logos/envato.jpg" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img class="lazyload img-fluid d-block mx-auto" src="img/logos/designmodo.jpg" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img class="lazyload img-fluid d-block mx-auto" src="img/logos/themeforest.jpg" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img class="lazyload img-fluid d-block mx-auto" src="img/logos/creative-market.jpg" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    -->
-
-    <!-- Contact -->
-    <section class="bg-white page-section" id="contact">
-        <div class="container">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading text-uppercase">Contact</h2>
-                <h3 class="section-subheading text-muted">どんな内容でもお気軽にお問い合わせください。</h3>
-            </div>
-            <!--
-            <div class="row">
-                <div class="col-12">
-                    <iframe title="googleForm"
-                        src="https://docs.google.com/forms/d/e/1FAIpQLSeDl7m8GDCWLAI_EY3pI7QX4P7edDlF5OGjAsbRBnMsac_pBQ/viewform?embedded=true"
-                        width="100%" height="950" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
-                </div>
-            </div>
-
-            -->
-            <!--
-            <div class="row">
-                <div class="col-lg-12">
-                    <form id="contactForm" name="sentMessage" novalidate="novalidate">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input class="form-control" id="name" type="text" placeholder="お名前"
-                                        required="required" data-validation-required-message="Please enter your name.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" id="email" type="email" placeholder="メールアドレス"
-                                        required="required"
-                                        data-validation-required-message="Please enter your email address.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" id="phone" type="tel" placeholder="電話番号"
-                                        required="required"
-                                        data-validation-required-message="Please enter your phone number.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <textarea class="form-control" id="message" placeholder="お問い合わせ内容"
-                                        required="required"
-                                        data-validation-required-message="Please enter a message.">
-                                    </textarea>
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="col-lg-12 text-center">
-                                <div id="success"></div>
-                                <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">
-                                    Send Message
-                                </button>
-                            </div>
+                        <div class="form-field">
+                            <label for="phone">電話番号<span class="req opt">任意</span></label>
+                            <input id="phone" name="entry.707353069" type="tel" autocomplete="tel">
+                            <p class="form-error"></p>
+                        </div>
+                        <div class="form-field">
+                            <label for="message">お問い合わせ内容<span class="req">必須</span></label>
+                            <textarea id="message" name="entry.2089486694" required></textarea>
+                            <p class="form-error">お問い合わせ内容を入力してください。</p>
+                        </div>
+                        <div class="form-actions">
+                            <button class="btn btn-primary" id="sendButton" type="submit">送信する</button>
                         </div>
                     </form>
+                    <div class="form-success" id="formSuccess" role="status">
+                        お問い合わせありがとうございます。<br>内容を確認のうえ、折り返しご連絡いたします。
+                    </div>
+                    <div class="form-failure" id="formFailure" role="alert">
+                        送信できませんでした。<br>通信環境をご確認のうえ再度お試しいただくか、<br>お手数ですがメールにてご連絡ください。
+                    </div>
+                    <iframe name="hiddenSubmitFrame" style="display:none" title="送信処理用フレーム"></iframe>
                 </div>
             </div>
-            -->
+        </section>
 
-            <div class="row">
-                <div class="col-lg-12">
-                    <form action="https://docs.google.com/forms/d/e/1FAIpQLSeDl7m8GDCWLAI_EY3pI7QX4P7edDlF5OGjAsbRBnMsac_pBQ/formResponse" method="post" target="dummyIframe" id="toGoogleForm" name="toGoogleForm" novalidate="novalidate">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input class="form-control" name="entry.126793355" id="name" type="text" placeholder="お名前" required="required"
-                                        data-validation-required-message="Please enter your name.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" name="entry.681591770" id="email" type="email" placeholder="メールアドレス" required="required"
-                                        data-validation-required-message="Please enter your email address.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" name="entry.707353069" id="phone" type="tel" placeholder="電話番号"　data-validation-required-message="Please enter your phone number.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <textarea class="form-control" name="entry.2089486694" id="message" placeholder="お問い合わせ内容" required="required" data-validation-required-message="Please enter a message."></textarea>
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="col-lg-12 text-center">
-                                <div id="success"></div>
-                                <button id="sendButton" class="btn btn-primary btn-xl text-uppercase" type="submit" value="送信" onSubmit="return formClick()">送信</button>
-                            </div>
-                        </div>
-                    </form>
-                    <iframe name="dummyIframe" style="display:none;"></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
+    </main>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <footer class="site-footer">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <span class="copyright">Copyright &copy; SaaB Technologies 2023</span>
-                </div>
-                <!--
-                <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-                        <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                -->
-                <div class="col-md-6">
-                    <ul class="list-inline quicklinks">
-                        <li class="list-inline-item">
-                            <a href="policy.html">Privacy Policy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <p class="tagline">Serve as a bridge — あなたとITを繋ぐ懸け橋に</p>
+            <nav aria-label="フッター">
+                <ul>
+                    <li><a href="#services">サービス</a></li>
+                    <li><a href="#cases">実績</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                    <li><a href="policy.html">プライバシーポリシー</a></li>
+                </ul>
+            </nav>
+            <p class="copyright">&copy; <span id="year">2026</span> SaaB Technologies</p>
         </div>
     </footer>
 
-    <!-- Portfolio Modals -->
-
-    <!-- Modal 1 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl"></div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 mx-auto">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h4 class="text-uppercase">古民家型民泊施設ホームページの改修･SEO対応</h4>
-                                <p class="item-intro text-muted"></p>
-                                <img class="lazyload img-fluid d-block mx-auto" data-src="img/mayudama.jpg" alt="">
-                                <p>
-                                    古民家の雰囲気がより伝わるように画像を多様しました。(PC･スマホ両対応)
-                                    <br>URL:<a href="https://mayudamahouse.net">https://mayudamahouse.net</a>
-                                </p>
-                                <ul class="list-inline">
-                                    <li>Date: 2018年10月</li>
-                                    <li>Client: 合同会社 次代ライフスタイルメーカー 様</li>
-                                    <li>Category: web開発</li>
-                                </ul>
-                                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                    <i class="fas fa-times"></i>
-                                    Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 2 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl"></div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 mx-auto">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h4 class="text-uppercase">バイオリンECサイト構築</h4>
-                                <p class="item-intro text-muted"></p>
-                                <img class="lazyload img-fluid d-block mx-auto" data-src="img/space_quartet.jpg" alt="">
-                                <p>
-                                    オープンソースの「EC-CUBE」を用いてECサイトの新規構築を行いました。
-                                    <br>競合の激しいECサイト業界で差別化を図るためにオリジナリティ溢れるデザインを意識しました。(現在閉鎖中)
-                                </p>
-                                <ul class="list-inline">
-                                    <li>Date: 2018年12月</li>
-                                    <li>Client: Space Quartet&Co. 様</li>
-                                    <li>Category: Web開発</li>
-                                </ul>
-                                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                    <i class="fas fa-times"></i>
-                                    Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 3 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl"></div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 mx-auto">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h4 class="text-uppercase">タブレットPOSレジ(Airレジ)導入支援</h4>
-                                <p class="item-intro text-muted"></p>
-                                <img class="lazyload img-fluid d-block mx-auto" data-src="img/reji.jpg" alt="">
-                                <p>
-                                    お客様が運営されている飲食店のPOSシステムを刷新する為、POSレジアプリの「<a href="https://airregi.jp/">Airレジ</a>」の導入をしました。
-                                    <br>Airレジは従来のPOSレジと違い、
-                                    <br>商品の編集や税率の設定、レジ締め作業、売上分析などが非常にやりやすくなる為
-                                    <br>業務効率化に大きく寄与することが出来ました。
-                                </p>
-                                <ul class="list-inline">
-                                    <li>Date: 2018年7月</li>
-                                    <li>Client: 株式会社松高 様</li>
-                                    <li>Category: IT製品導入支援</li>
-                                </ul>
-                                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                    <i class="fas fa-times"></i>
-                                    Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 4 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl"></div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 mx-auto">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h4 class="text-uppercase">勤怠システム(シュキーン)導入支援</h4>
-                                <p class="item-intro text-muted"></p>
-                                <img class="lazyload img-fluid d-block mx-auto" data-src="img/syuki-n.jpg" alt="">
-                                <p>
-                                    タブレット端末をタイムカード代わりに出来るアプリ、「<a href="https://www.shukiin.com/">シュキーン</a>」とVBAを用い、勤怠システム及び給与自動計算システムを構築しました。
-                                    <br>導入前までは毎月丸１日かけて従業員の給与計算を手作業で行っていたそうですが、
-                                    <br>本システムの導入により完全自動で給与計算をする事が出来るようになりました。
-                                </p>
-                                <ul class="list-inline">
-                                    <li>Date: 2019年1月</li>
-                                    <li>Client: 株式会社松高 様</li>
-                                    <li>Category: IT製品導入支援</li>
-                                </ul>
-                                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                    <i class="fas fa-times"></i>
-                                    Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 5 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl"></div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 mx-auto">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h4 class="text-uppercase">PC定期メンテナンス</h4>
-                                <p class="item-intro text-muted"></p>
-                                <img class="lazyload img-fluid d-block mx-auto" data-src="img/mentenans.jpg" alt="">
-                                <p>
-                                    お客様オフィスで利用されているPCに対し、
-                                    <br>ソフトウェアアップデート、ウイルスチェック、ディスククリーニング
-                                    <br>を行っています。また、トラブル発生時には対象PCを遠隔操作し、即座に対処します。
-                                    <br>定期のメンテナンスと並行して、古くなったPCの買替提案、実施も行っています。
-                                </p>
-                                <ul class="list-inline">
-                                    <li>Date: 2018年12月~</li>
-                                    <li>Client: 株式会社三巧クリーン 様</li>
-                                    <li>Category: IT製品保守管理</li>
-                                </ul>
-                                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                    <i class="fas fa-times"></i>
-                                    Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 6 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl"></div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 mx-auto">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h4 class="text-uppercase">NASサーバ構築</h4>
-                                <p class="item-intro text-muted"></p>
-                                <img class="lazyload img-fluid d-block mx-auto" data-src="img/nas.jpg" alt="">
-                                <p>
-                                    ネットワーク経由でアクセス出来るファイルサーバである、「NASサーバ」を新規構築、導入しました。
-                                    <br>今まで、業務に必要なファイルは各従業員のPCに保存し、ファイルやり取りはメール等を利用されていましたが、
-                                    <br>NASを導入することで、ファイルのやり取りや管理の手間を省いたり、ファイル消失のリスクを大幅に低減する事が出来ました。
-                                </p>
-                                <ul class="list-inline">
-                                    <li>Date: 2019年6月</li>
-                                    <li>Client: 株式会社三巧クリーン 様</li>
-                                    <li>Category: IT製品導入支援</li>
-                                </ul>
-                                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                    <i class="fas fa-times"></i>
-                                    Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 7 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl"></div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 mx-auto">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h4 class="text-uppercase">多拠点間VPN環境構築</h4>
-                                <p class="item-intro text-muted"></p>
-                                <img class="lazyload img-fluid d-block mx-auto" data-src="img/vpn.jpg" alt="">
-                                <p>
-                                    オフィス拠点の増設に伴い、拠点間を繋ぐ社内ネットワークの構築をしました。
-                                    <br>どの拠点からもNASサーバへアクセス出来る等、全ての拠点で同一の環境でPCを使うことが可能になりました。
-                                </p>
-                                <ul class="list-inline">
-                                    <li>Date: 2019年8月</li>
-                                    <li>Client: 株式会社三巧クリーン 様</li>
-                                    <li>Category: IT製品導入支援</li>
-                                </ul>
-                                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                    <i class="fas fa-times"></i>
-                                    Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 8 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal8" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl"></div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 mx-auto">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h4 class="text-uppercase">システム間データ変換･移行ツール開発</h4>
-                                <p class="item-intro text-muted"></p>
-                                <img class="lazyload img-fluid d-block mx-auto" data-src="img/programing.jpg" alt="">
-                                <p>
-                                    お客様の社内で利用されている業務管理システムのデータを自動で経理システムへ移行するツールを開発･導入しました。
-                                    <br>ツール導入前は業務管理システムから出力されたデータを経理システムに取り込めるように手動で形成、書き換え等をされていましたが、
-                                    <br>それを自動化する事で業務効率化に大きく貢献することが出来ました。
-                                </p>
-                                <ul class="list-inline">
-                                    <li>Date: 2019年9月</li>
-                                    <li>Client: 株式会社ビーエス観光 様</li>
-                                    <li>Category: システム開発</li>
-                                </ul>
-                                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                    <i class="fas fa-times"></i>
-                                    Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 9 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal9" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl"></div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 mx-auto">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h4 class="text-uppercase">既存サイトアフィリエイト対応</h4>
-                                <p class="item-intro text-muted"></p>
-                                <img class="lazyload img-fluid d-block mx-auto" data-src="img/figomens.png" alt="">
-                                <p>
-                                    お客様の事業でアフィリエイト広告を導入するということで、それに対応する為のシステムを構築しました。
-                                    <br>複数のアフィリエイト会社に対応出来るよう、汎用的な設計をし、利便性を向上させました。
-                                </p>
-                                <ul class="list-inline">
-                                    <li>Date: 2019年5月</li>
-                                    <li>Client: 株式会社jacat 様</li>
-                                    <li>Category: Web開発</li>
-                                </ul>
-                                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                    <i class="fas fa-times"></i>
-                                    Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 10 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal10" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl"></div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 mx-auto">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h4 class="text-uppercase">料金計算ページ作成</h4>
-                                <p class="item-intro text-muted"></p>
-                                <img class="lazyload img-fluid d-block mx-auto" data-src="img/figo-price.png" alt="">
-                                <p>
-                                    お客様の提供されるサービスの料金計算ページを刷新しました。
-                                    <br>既存のページはデザイン性、操作性に欠けていたので、分かりやすく、操作しやすいページへと改修しました。
-                                </p>
-                                <ul class="list-inline">
-                                    <li>Date: 2019年9月</li>
-                                    <li>Client: 株式会社jacat 様</li>
-                                    <li>Category: Web開発</li>
-                                </ul>
-                                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                    <i class="fas fa-times"></i>
-                                    Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 11 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal11" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl"></div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 mx-auto">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h4 class="text-uppercase">コンセプトカフェ情報サイト作成</h4>
-                                <p class="item-intro text-muted"></p>
-                                <img class="lazyload img-fluid d-block mx-auto" data-src="img/con-cafejp.png" alt="">
-                                <p>
-                                    コンセプトの店舗情報をまとめたポータルサイトを作成しました。<br>
-                                    店舗情報はGoogleスプレッドシートで管理し、APIを用いて自動で投稿管理が行えるように工夫しています。<br>
-                                    現在は事業売却済み。売却後においても、売却先法人にてCTOとして開発プロジェクトに参画。<br>
-                                    2024年11月に、さらに会社売却を実施し、それに伴いCTO退任<br>
-                                    <br>URL:<a href="https://con-cafe.jp">https://con-cafe.jp</a>
-                                </p>
-                                <ul class="list-inline">
-                                    <li>Date: 2020年1月</li>
-                                    <li>Client: なし</li>
-                                    <li>Category: Web開発</li>
-                                </ul>
-                                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                    <i class="fas fa-times"></i>
-                                    Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal 12 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal12" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl"></div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 mx-auto">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h4 class="text-uppercase">入浴剤ECサイト構築</h4>
-                                <p class="item-intro text-muted"></p>
-                                <img class="lazyload img-fluid d-block mx-auto" data-src="img/onsenhap.jpg" alt="">
-                                <p>
-                                    草津温泉そのものが入っている入浴剤のECサイトを構築しました。<br>
-                                    EC-CUBE4をベースにし、同意書への同意取得や柔軟な購入制限機能を追加開発しました。<br>
-                                    <br>URL:<a href="https://kusatsu-onsenhap.com">https://kusatsu-onsenhap.com</a>
-                                </p>
-                                <ul class="list-inline">
-                                    <li>Date: 2021年4月</li>
-                                    <li>Client: 有限会社駿河屋商店 様</li>
-                                    <li>Category: Web開発</li>
-                                </ul>
-                                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                    <i class="fas fa-times"></i>
-                                    Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal 13 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal13" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl"></div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 mx-auto">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h4 class="text-uppercase">求人系Webサービス開発</h4>
-                                <p class="item-intro text-muted"></p>
-                                <img class="lazyload img-fluid d-block mx-auto" data-src="img/about_logo.png" alt="">
-                                <p>
-                                    HRTechの求人Webサービスのバックエンドの開発を担当。<br>
-                                    バックエンド領域のテックリードとして設計や開発、マネジメント、提案等幅広い業務を担当しています。<br>
-                                    使用言語：PHP(Laravel), MySQL, AWS, Golang, Docker等<br>
-                                </p>
-                                <ul class="list-inline">
-                                    <li>Date: 2020年10月~</li>
-                                    <li>Category: Web開発(バックエンド)</li>
-                                </ul>
-                                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                    <i class="fas fa-times"></i>
-                                    Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal 14 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal14" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl"></div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 mx-auto">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h4 class="text-uppercase">webメディア運営</h4>
-                                <p class="item-intro text-muted"></p>
-                                <img class="lazyload img-fluid d-block mx-auto" data-src="img/about_logo.png" alt="">
-                                <p>
-                                    <ul>
-                                        <li>スマートフードナビ</li>
-                                        <ul>
-                                            <li>宅食や完全栄養食など、食生活をスマートにする製品の紹介をしているメディアです</li>
-                                            <li>https://smart-food-navi.jp</li>
-                                        </ul>
-                                        <li>ももっとログ</li>
-                                        <ul>
-                                            <li>ドラマ･アーティスト･マンガなどのエンタメ情報をメインに取り扱うトレンドブログです</li>
-                                            <li>https://mochiodays.com/</li>
-                                        </ul>
-                                    </ul>
-                                </p>
-                                <ul class="list-inline">
-                                    <li>Date: 2024年11月~</li>
-                                    <li>Category: メディア運営</li>
-                                </ul>
-                                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                    <i class="fas fa-times"></i>
-                                    Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
-
-    <!-- Chart.JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
-
-
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js" defer></script>
-
-    <!-- Contact form JavaScript -->
-    <script src="js/jqBootstrapValidation.js" defer></script>
-    <script src="js/contact_me.js" defer></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="js/agency.min.js" defer></script>
-
-    <script>
-        var ctx = document.getElementById("SkillChart1");
-        var myChart = new Chart(ctx, {
-            type: 'horizontalBar',
-            data: {
-                labels: ["PHP", "HTML/CSS", "JavaScript", "VBA", "VB.NET", "Python", "SQL", "golang"],
-                datasets: [{
-                    label: 'Programing language',
-                    data: [10, 7, 6, 9, 7, 7, 10, 10],
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    xAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
-            }
-        });
-
-        var ctx = document.getElementById("SkillChart2");
-        var myChart = new Chart(ctx, {
-            type: 'horizontalBar',
-            data: {
-                labels: ["Laravel", "jQuery", "Git", "Jenkins", "Docker", "WordPress", "Alfresco", "EC-CUBE","WinActor", "AWS"],
-                datasets: [{
-                    label: 'Others',
-                    data: [8, 6, 10, 8, 10, 7, 8, 7, 9, 8],
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    xAxes: [{
-                        ticks: {
-                            beginAtZero: true,
-                            max: 10
-                        }
-                    }]
-                }
-            }
-        });
-    </script>
-    <!--2019/12/9 画像の遅延読み込み導入-->
-    <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js"></script>
-    <script>
-        lazyload();
-    </script>
-    
-    <!-- 2021/6/30 フォーム送信後に送信ボタンを非活性とする。 -->
-    <script>
-        function formClick(){
-            const sendButton = document.getElementById('sendButton');
-            var name = document.getElementById('name').value;
-            var email = document.getElementById('email').value;
-            var message = document.getElementById('message').value;
-            if(name != "" && email !="" && message != ""){
-                alert("お問い合わせが完了しました。");
-                sendButton.disabled = true;
-                sendButton.value = "問い合わせ完了";
-            }else{
-                alert("お名前、メールアドレス、お問い合わせ内容のいずれかが不正です。");
-            }
-        return true;
-        }
-    </script>
-    
+    <script src="js/site.js" defer></script>
 </body>
 
 </html>
