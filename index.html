@@ -622,9 +622,6 @@
                     <p class="section-lead">どんな内容でもお気軽にどうぞ。通常2営業日以内にご返信します。</p>
                 </div>
                 <div class="contact-form">
-                    <div class="form-success" id="formSuccess" role="status">
-                        お問い合わせありがとうございます。<br>内容を確認のうえ、折り返しご連絡いたします。
-                    </div>
                     <form action="https://docs.google.com/forms/d/e/1FAIpQLSeDl7m8GDCWLAI_EY3pI7QX4P7edDlF5OGjAsbRBnMsac_pBQ/formResponse"
                         method="post" target="hiddenSubmitFrame" id="contactForm" novalidate>
                         <div class="form-field">
@@ -651,6 +648,12 @@
                             <button class="btn btn-primary" id="sendButton" type="submit">送信する</button>
                         </div>
                     </form>
+                    <div class="form-success" id="formSuccess" role="status">
+                        お問い合わせありがとうございます。<br>内容を確認のうえ、折り返しご連絡いたします。
+                    </div>
+                    <div class="form-failure" id="formFailure" role="alert">
+                        送信できませんでした。<br>通信環境をご確認のうえ再度お試しいただくか、<br>お手数ですがメールにてご連絡ください。
+                    </div>
                     <iframe name="hiddenSubmitFrame" style="display:none" title="送信処理用フレーム"></iframe>
                 </div>
             </div>

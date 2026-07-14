@@ -19,12 +19,16 @@
     }
 
     // --- お問い合わせフォーム ---
-    // Googleフォームへ hidden iframe 経由で POST する。
-    // クロスオリジンのため送信結果は取得できず、成功表示は楽観的に行う。
+    // Googleフォームへ fetch(no-cors) で POST する。
+    // クロスオリジンのため HTTP ステータスまでは読めないが、
+    // fetch の成否でネットワーク到達（オフライン・接続断・タイムアウト）は判定できる。
     var form = document.getElementById('contactForm');
     if (form) {
         var success = document.getElementById('formSuccess');
+        var failure = document.getElementById('formFailure');
         var button = document.getElementById('sendButton');
+        var submitting = false;
+        var sent = false; // 送信済み。再入力があれば解除して補足の送信を可能にする
 
         function validateField(input) {
             var field = input.closest('.form-field');
@@ -34,21 +38,54 @@
         }
 
         form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (submitting) return; // 連続クリックによる重複送信を防ぐ
+
             var allValid = true;
             form.querySelectorAll('input, textarea').forEach(function (input) {
                 if (!validateField(input)) allValid = false;
             });
             if (!allValid) {
-                e.preventDefault();
                 var firstInvalid = form.querySelector('.form-field.invalid input, .form-field.invalid textarea');
                 if (firstInvalid) firstInvalid.focus();
                 return;
             }
-            // 送信自体はブラウザに任せ、UI だけ更新する
+
+            submitting = true;
             button.disabled = true;
-            button.textContent = '送信しました';
-            success.classList.add('shown');
-            success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            button.textContent = '送信中…';
+            failure.classList.remove('shown');
+
+            var controller = new AbortController();
+            var timer = setTimeout(function () { controller.abort(); }, 15000);
+
+            fetch(form.action, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: new URLSearchParams(new FormData(form)),
+                signal: controller.signal
+            }).then(function () {
+                sent = true;
+                button.textContent = '送信しました';
+                success.classList.add('shown');
+                form.reset();
+            }).catch(function () {
+                submitting = false;
+                button.disabled = false;
+                button.textContent = '送信する';
+                failure.classList.add('shown');
+            }).finally(function () {
+                clearTimeout(timer);
+            });
+        });
+
+        // 送信済み後に再入力があったらボタンを復活させ、補足の問い合わせを送れるようにする
+        form.addEventListener('input', function () {
+            if (!sent) return;
+            sent = false;
+            submitting = false;
+            button.disabled = false;
+            button.textContent = '送信する';
         });
 
         form.querySelectorAll('input, textarea').forEach(function (input) {

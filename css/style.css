@@ -57,6 +57,7 @@ a { color: var(--teal); }
   top: 0;
   z-index: 100;
   background: rgba(252, 253, 252, 0.92);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
 }
@@ -338,6 +339,7 @@ a { color: var(--teal); }
   padding: 28px 24px;
   font-weight: 500;
   text-align: center;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
 
 .worry .q {
@@ -361,6 +363,16 @@ a { color: var(--teal); }
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 32px 28px;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+@media (hover: hover) {
+  .worry:hover,
+  .service:hover {
+    transform: translateY(-2px);
+    border-color: #c8dcda;
+    box-shadow: 0 10px 28px rgba(20, 85, 95, 0.08);
+  }
 }
 
 .service h3 {
@@ -425,7 +437,8 @@ a { color: var(--teal); }
 
 .case[hidden] { display: none; }
 
-.case:hover {
+.case:hover,
+.case:focus-within {
   transform: translateY(-4px);
   box-shadow: 0 14px 36px rgba(20, 85, 95, 0.14);
 }
@@ -798,10 +811,24 @@ body:has(dialog[open]) { overflow: hidden; }
   padding: 24px;
   text-align: center;
   font-weight: 700;
-  margin-bottom: 24px;
+  margin-top: 24px;
 }
 
 .form-success.shown { display: block; }
+
+.form-failure {
+  display: none;
+  background: #fbeee9;
+  border: 1px solid #b3401f;
+  color: #b3401f;
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
+  font-weight: 700;
+  margin-top: 24px;
+}
+
+.form-failure.shown { display: block; }
 
 /* --- Prose (policy.html などの文章ページ) ------------------------------------ */
 
@@ -859,6 +886,27 @@ body:has(dialog[open]) { overflow: hidden; }
 
 /* --- Responsive ----------------------------------------------------------------- */
 
+@media (max-width: 980px) {
+  .nav-toggle { display: block; }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 12px 24px rgba(20, 85, 95, 0.08);
+    padding: 8px 24px 16px;
+  }
+
+  .site-nav.open { display: block; }
+  .site-nav ul { flex-direction: column; align-items: stretch; gap: 2px; }
+  .site-nav a { padding: 12px; }
+  .nav-cta { text-align: center; margin-top: 8px; }
+}
+
 @media (max-width: 900px) {
   .services, .cases, .pricing, .worries { grid-template-columns: repeat(2, 1fr); }
   .services .service:last-child:nth-child(3n + 1) { grid-column: auto; }
@@ -871,25 +919,14 @@ body:has(dialog[open]) { overflow: hidden; }
   .section { padding: 64px 0; }
   .services, .cases, .pricing, .worries, .flow { grid-template-columns: 1fr; }
   .skill-group { grid-template-columns: 1fr; gap: 4px; }
+  .brand img { width: min(230px, calc(100vw - 132px)); height: auto; }
 
-  .nav-toggle { display: block; }
-
-  .site-nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--paper);
-    border-bottom: 1px solid var(--line);
-    padding: 8px 24px 16px;
+  /* br位置での改行を保ったまま収まるよう、最長行(全角22文字)が枠内に入る
+     フォントサイズへ画面幅に応じて縮める。66px = container余白48 + 枠線2 + padding16 */
+  .form-success, .form-failure {
+    padding: 16px 8px;
+    font-size: clamp(0.68rem, calc((100vw - 66px) / 22.4), 0.9rem);
   }
-
-  .site-nav.open { display: block; }
-
-  .site-nav ul { flex-direction: column; align-items: stretch; gap: 2px; }
-  .site-nav a { padding: 12px; }
-  .nav-cta { text-align: center; margin-top: 8px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -897,5 +934,5 @@ body:has(dialog[open]) { overflow: hidden; }
   .hero-bg i { animation: none; }
   .scroll-cue::after { animation: none; transform: scaleY(1); }
   .case-dialog[open] { animation: none; }
-  .btn, .case, .case-media img { transition: none; }
+  .btn, .case, .case-media img, .worry, .service { transition: none; }
 }
